@@ -5,7 +5,8 @@ using System.Threading;
 
 class Program {
 static SerialPort serialPort;
-    static void Main(string[] args) {
+    static void Main(string[] args)
+    {
 
         Console.WriteLine("Available COM Port : ");
         foreach (string s in SerialPort.GetPortNames()) {
@@ -33,8 +34,31 @@ static SerialPort serialPort;
             return;
         }
 
-        Console.WriteLine("Press any key to close the application");
-        Console.ReadKey();
+        Console.WriteLine("Enter a message to send (type 'exit' to quit):");
+
+        while (true)
+        {
+            string message = Console.ReadLine();
+
+            /*string message = await Console.ReadLineAsync();*/
+
+            if (message.ToLower() == "exit")
+            {
+                break;
+            }
+            try
+            {
+                Console.WriteLine($"Sending message: {message}");
+                serialPort.Write(message + "\n");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error sending message: {ex.Message}");
+            }
+        }
+
+        /*Console.WriteLine("Press any key to close the application");
+        Console.ReadKey();*/
 
         if (serialPort.IsOpen) {
             serialPort.Close();
