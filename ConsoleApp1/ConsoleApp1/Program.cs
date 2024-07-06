@@ -30,7 +30,7 @@ static SerialPort serialPort;
             serialPort.Open();
             Console.WriteLine($"Serial port {portName} opend");
         } catch (Exception e) {
-            Console.WriteLine($"Failed to open serial port {portName} : ");
+            Console.WriteLine($"Failed to open serial port {portName} : {e.Message}");
             return;
         }
 
