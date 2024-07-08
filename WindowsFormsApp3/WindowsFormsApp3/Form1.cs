@@ -29,14 +29,18 @@ namespace WindowsFormsApp3
             serialPort = new SerialPort();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+      /*  private void Form1_Load(object sender, EventArgs e)
         {
             serialPort.PortName = "COM3"; // 포트 이름 설정
             serialPort.BaudRate = 9600;   // 통신 속도 설정
-        }
+        }*/
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+            serialPort.PortName = "COM4";
+            serialPort.BaudRate = 115200;
+
             if (!isRunning)
             {
                 isRunning = true;
