@@ -28,7 +28,7 @@ namespace WindowsFormsApp4
             InitializeComponent();
             randomNum = new RandomNum();
             serialPort = new SerialPort();
-            serialPort.PortName = "COM3";
+            serialPort.PortName = "COM4";
             serialPort.BaudRate = 115200;
             serialPort.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
         }

@@ -30,7 +30,7 @@ namespace WindowsFormsApp3
             InitializeComponent();
             messageStack = new MessageStack();
             serialPort = new SerialPort();
-            serialPort.PortName = "COM3"; // 포트 이름 설정
+            serialPort.PortName = "COM4"; // 포트 이름 설정
             serialPort.BaudRate = 115200;   // 통신 속도 설정
             serialPort.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
             //Delegate인 DataReceived(event) 동기적인 방식으로 진행된다.
